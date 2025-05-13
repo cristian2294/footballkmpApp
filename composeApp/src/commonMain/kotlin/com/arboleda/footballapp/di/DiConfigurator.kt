@@ -9,7 +9,7 @@ fun initKoin(config: KoinAppDeclaration? = null) {
         modules(
             dataModule,
             domainModule,
-            uiModule
+            uiModule,
         )
     }
 }
