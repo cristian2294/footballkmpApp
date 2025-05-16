@@ -8,6 +8,7 @@ plugins {
     alias(libs.plugins.composeCompiler)
     alias(libs.plugins.kotlinxSerialization)
     alias(libs.plugins.kspCompose)
+    alias(libs.plugins.secretsGradlePlugin)
 }
 
 kotlin {
@@ -98,6 +99,17 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
+    }
+
+    secrets {
+        propertiesFileName = "secrets.properties"
+        defaultPropertiesFileName = "local.properties"
+        ignoreList.add("keyToIgnore")
+        ignoreList.add("sdk.*")
+    }
+
+    buildFeatures {
+        buildConfig = true
     }
 }
 
