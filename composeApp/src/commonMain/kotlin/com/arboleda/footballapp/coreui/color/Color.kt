@@ -27,6 +27,7 @@ val PlaceholderColor
 val Pink1 = Color(0xFFF4A58A)
 val Pink2 = Color(0xFFED6B4E)
 val BlueApp = Color(0xFF246BFD)
+val GreyApp = Color(0xFF65656B)
 
 val PrimaryLight = Color(0xFFFFFFFF)
 val SecondaryLight = Color(0xFFEAE8EF)

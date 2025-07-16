@@ -31,6 +31,7 @@ import org.jetbrains.compose.resources.Font
 @Composable
 fun CustomTopBar(
     modifier: Modifier = Modifier,
+    listItems: List<String> = emptyList(),
     containerColor: Color?,
     description: String?,
     onBack: () -> Unit = {},
@@ -40,7 +41,7 @@ fun CustomTopBar(
             modifier
                 .fillMaxWidth()
                 .background(color = containerColor ?: BackgroundSecondaryColor)
-                .padding(horizontal = 16.dp, vertical = 12.dp),
+                .padding(horizontal = 28.dp, vertical = 12.dp),
         verticalAlignment = Alignment.CenterVertically,
     ) {
         Icon(
