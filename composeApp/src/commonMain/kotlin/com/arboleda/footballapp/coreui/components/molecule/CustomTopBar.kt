@@ -44,30 +44,45 @@ fun CustomTopBar(
                 .padding(horizontal = 28.dp, vertical = 12.dp),
         verticalAlignment = Alignment.CenterVertically,
     ) {
-        Icon(
-            modifier =
-                Modifier
-                    .size(24.dp)
-                    .clickable {
-                        onBack()
-                    },
-            imageVector = Icons.Filled.ArrowBackIosNew,
-            contentDescription = "Back",
-            tint = DefaultTextColor,
-        )
+        if (description != "Live Score") {
+            Icon(
+                modifier =
+                    Modifier
+                        .size(24.dp)
+                        .clickable {
+                            onBack()
+                        },
+                imageVector = Icons.Filled.ArrowBackIosNew,
+                contentDescription = "Back",
+                tint = DefaultTextColor,
+            )
 
-        Text(
-            modifier =
-                Modifier
-                    .weight(1f)
-                    .padding(horizontal = 8.dp),
-            text = description ?: EMPTY_STRING,
-            fontWeight = FontWeight.SemiBold,
-            fontFamily = createCustomFontFamily(),
-            fontSize = 20.sp,
-            color = DefaultTextColor,
-            textAlign = TextAlign.Center,
-        )
+            Text(
+                modifier =
+                    Modifier
+                        .weight(1f)
+                        .padding(horizontal = 8.dp),
+                text = description ?: EMPTY_STRING,
+                fontWeight = FontWeight.SemiBold,
+                fontFamily = createCustomFontFamily(),
+                fontSize = 20.sp,
+                color = DefaultTextColor,
+                textAlign = TextAlign.Center,
+            )
+        } else {
+            Text(
+                modifier =
+                    Modifier
+                        .weight(1f)
+                        .padding(horizontal = 8.dp),
+                text = description ?: EMPTY_STRING,
+                fontWeight = FontWeight.SemiBold,
+                fontFamily = createCustomFontFamily(),
+                fontSize = 20.sp,
+                color = DefaultTextColor,
+                textAlign = TextAlign.Center,
+            )
+        }
     }
 }
 

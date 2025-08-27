@@ -1,4 +1,4 @@
-package com.arboleda.footballapp.ui.screens.fixtures
+package com.arboleda.footballapp.ui.screens.home
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -18,29 +18,29 @@ import com.arboleda.footballapp.coreui.color.DefaultTextColor
 import com.arboleda.footballapp.coreui.components.molecule.CustomTopBar
 
 @Composable
-fun FixturesScreen() {
+fun HomeScreen() {
     Column(
         modifier =
             Modifier
                 .fillMaxSize()
-                .background(BackgroundSecondaryColor)
-                .padding(16.dp),
+                .padding(16.dp)
+                .background(BackgroundSecondaryColor),
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         CustomTopBar(
             containerColor = BackgroundSecondaryColor,
-            description = "Fixtures",
+            description = "Live Score",
         )
         Spacer(modifier = Modifier.weight(1f))
         Text(
-            text = "Fixtures Screen",
+            text = "Home Screen",
             fontSize = 24.sp,
             fontWeight = FontWeight.Bold,
             color = DefaultTextColor,
         )
         Text(
-            text = "Aquí estarán los partidos",
+            text = "Bienvenido a la pantalla principal",
             fontSize = 16.sp,
             color = DefaultTextColor,
             modifier = Modifier.padding(top = 8.dp),

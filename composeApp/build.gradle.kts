@@ -60,6 +60,8 @@ kotlin {
             implementation(libs.coil.network.ktor2)
 
             implementation(compose.materialIconsExtended)
+
+            implementation(libs.navigation.compose)
         }
         iosMain.dependencies {
             implementation(libs.ktor.client.darwin)

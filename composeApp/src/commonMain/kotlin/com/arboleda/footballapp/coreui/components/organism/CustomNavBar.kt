@@ -16,6 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import com.arboleda.footballapp.coreui.color.BackgroundPrimaryColor
 import com.arboleda.footballapp.coreui.color.BlueApp
 import com.arboleda.footballapp.coreui.color.GreyApp
@@ -25,6 +26,7 @@ import com.arboleda.footballapp.coreui.navigation.bottomNavigation.model.BottomM
 @Composable
 fun CustomNavBar(
     modifier: Modifier = Modifier,
+    navController: NavController,
     listItems: List<BottomMenuItem>,
     elevation: Dp = NavigationBarDefaults.Elevation,
     containerColor: Color,
@@ -54,7 +56,16 @@ fun CustomNavBar(
                         selectedIconColor = BlueApp,
                         unselectedIconColor = GreyApp,
                     ),
-                onClick = {},
+                onClick = {
+                    selectedDestination = index
+                    navController.navigate(item.route) {
+                        popUpTo(0) {
+                            saveState = true
+                        }
+                        launchSingleTop = true
+                        restoreState = true
+                    }
+                },
                 icon =
                     if (selectedDestination == index) {
                         { DotIndicator() }
